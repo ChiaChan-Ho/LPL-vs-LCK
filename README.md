@@ -88,7 +88,6 @@ We permformed univariate analysis on the total kills statistics in the dataset
   height="600"
   frameborder="0"
 ></iframe>
-
 This histogram shows that...
 
 We also plot a graph for the dirstribution of damage per minute in the data set.
@@ -99,7 +98,6 @@ We also plot a graph for the dirstribution of damage per minute in the data set.
   height="600"
   frameborder="0"
 ></iframe>
-
 This histogram shows that...
 
 ---
