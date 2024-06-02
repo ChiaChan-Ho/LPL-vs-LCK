@@ -79,6 +79,17 @@ Below is the head of our resulting dataframe.
 
 *Note*: The cleaned dataset now consists of all the columns we need for both hypothesis testing and prediction modeling. Further adjustments will be made as necessary in subsequent sections.
 
+
+
+
+
+<iframe
+  src="assets/total_kills_histogram.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+
 ---
 
 ## Assessment of Missingness
