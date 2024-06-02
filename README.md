@@ -84,8 +84,8 @@ We permformed univariate analysis on the total kills statistics in the dataset
 
 <iframe
   src="assets/total_kills_histogram.html"
-  width="750"
-  height="550"
+  width="800"
+  height="600"
   frameborder="0"
 ></iframe>
 
@@ -95,8 +95,8 @@ We also plot a graph for the dirstribution of damage per minute in the data set.
 
 <iframe
   src="assets/damage_per_minute_histogram.html"
-  width="750"
-  height="550"
+  width="800"
+  height="600"
   frameborder="0"
 ></iframe>
 
