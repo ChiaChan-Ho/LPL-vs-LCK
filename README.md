@@ -161,9 +161,9 @@ The observed statistic for this permutation test is 0.2736, and the p-value is 0
 
 The second part here, we are going to test if the missingness of the `split` column depends on the number of minion kills. The significance level we chose for the permutation test is 0.05, and the test statistic is the difference in the proportion of missing values between players with minion kills above the mean and those with minion kills below the mean.
 
-Null Hypothesis (H0): The proportion of missing values in the `split` column is the same for players with minion kills above the mean and for players with minion kills below the mean. In other words, the distribution of missing values is independent of the number of minion kills.
+**Null Hypothesis (H0)**: The proportion of missing values in the `split` column is the same for players with minion kills above the mean and for players with minion kills below the mean. In other words, the distribution of missing values is independent of the number of minion kills.
 
-Alternative Hypothesis (H1): The proportion of missing values in the `split` column is different for players with minion kills above the mean compared to players with minion kills below the mean. In other words, the distribution of missing values is dependent on the number of minion kills.
+**Alternative Hypothesis (H1)**: The proportion of missing values in the `split` column is different for players with minion kills above the mean compared to players with minion kills below the mean. In other words, the distribution of missing values is dependent on the number of minion kills.
 
 Below is the observed distribution of missing values in the `split` column between players with minion kills above the mean and those with minion kills below the mean, along with the permutation test outcomes.
 
@@ -174,7 +174,7 @@ Below is the observed distribution of missing values in the `split` column betwe
   frameborder="0"
 ></iframe>
 
-The observed statistic for this permutation test is 0.0114, and the p-value is 0.104. Since the p-value is greater than the 0.05 significance level, we fail to reject the null hypothesis. Thus, the missingness of the `split` column does not depend on the number of minion kills.
+The observed statistic for this permutation test is 0.0114, and the p-value is 0.0981. Since the p-value is greater than the 0.05 significance level, we fail to reject the null hypothesis. Thus, the missingness of the `split` column does not depend on the number of minion kills.
 
 ---
 
