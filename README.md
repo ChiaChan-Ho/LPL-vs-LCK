@@ -134,19 +134,13 @@ The results show that matches with CKPM above the mean have better statistics: m
 
 ## Assessment of Missingness
 
-Here's what a Markdown table looks like. Note that the code for this table was generated _automatically_ from a DataFrame, using
+### NMAR Analysis
 
-```py
-print(cleaned_df[['league', 'split']].head().to_markdown(index=False))
-```
+In our data, we believe the column `url` is Not Missing At Random (NMAR). Upon examining the url column, we observe that there are no specific trends of missingness or any evidence suggesting that the missing URLs depend on other columns in the dataset. In the context of League of Legends matches, URLs are more likely to be recorded for high-profile or significant matches. This implies that the missingness of these URLs is inherently tied to the significance or profile of the match itself.
 
-| league   | split   |
-|:---------|:--------|
-| LFL2     | Spring  |
-| LFL2     | Spring  |
-| LFL2     | Spring  |
-| LFL2     | Spring  |
-| LFL2     | Spring  |
+The missingness of the `url` column depends on the match's significance and availability, rather than on other observed data in our dataset. To make this column Missing at Random (MAR), we might obtain additional data such as `match importance`, which indicates the importance or profile level of the match, and `broadcast status`, which shows whether the match was broadcasted or uploaded online. These additional data points would help explain the missingness and potentially transform the missingness mechanism from NMAR to MAR.
+
+### Missingness Dependency
 
 ---
 
