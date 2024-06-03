@@ -80,7 +80,7 @@ Below is the head of our resulting dataframe.
 *Note*: The cleaned dataset now consists of all the columns we need for both hypothesis testing and prediction modeling. Further adjustments will be made as necessary in subsequent sections.
 
 ### Univariate Analysis
-We permformed univariate analysis on the total kills statistics in the dataset
+We permformed univariate analysis on the total kills statistics in the dataset.
 
 <iframe
   src="assets/total_kills_histogram.html"
@@ -93,6 +93,8 @@ The histogram shows the distribution of total kills per game is roughly normal, 
 
 We also plot a graph for the dirstribution of damage per minute in the data set.
 
+
+
 <iframe
   src="assets/damage_per_minute_histogram.html"
   width="725"
@@ -101,6 +103,16 @@ We also plot a graph for the dirstribution of damage per minute in the data set.
 ></iframe>
 
 The histogram shows the distribution of damage per minute (DPM) is roughly normal, with a slight right skew. This indicates that most games have a typical amount of damage dealt, but there are some instances with exceptionally high DPM. This distribution helps us understand the overall damage output in games, which will be useful for comparing the aggressiveness between the LPL and LCK.
+
+### Bivariate Analysis
+We permformed bivariate analysis on the ckpm statistics in the dataset(to be change)
+
+<iframe
+  src="assets/average_ckpm_lpl_vs_lck.html"
+  width="725"
+  height="525"
+  frameborder="0"
+></iframe>
 
 ---
 
