@@ -180,6 +180,27 @@ The observed statistic for this permutation test is 0.0114, and the p-value is 0
 
 ## Hypothesis Testing
 
+In this hypothesis test, we aim to assess whether there is a significant difference in damage per minute (DPM) between the LPL and LCK leagues. This investigation is crucial for understanding the differences in playstyles between these two leagues, particularly in terms of their aggressiveness.
+
+**Null Hypothesis (H0)**: The LPL is equally aggressive as the LCK. There is no difference in DPM between LPL and LCK (Test statistic = 0).
+
+**Alternative Hypothesis (H1)**: The LPL is more aggressive than the LCK. The DPM of LPL is greater than that of LCK (Test statistic > 0).
+
+**Test Statistic**: The difference in DPM between LPL and LCK. We use DPM (damage per minute) as the test statistic because it directly quantifies the rate of damage dealt in the game, making it an effective measure of how aggressively a team or player is playing.
+
+**Significance Level**: 5%
+
+Below is a histogram containing the distribution of our test statistics during the hypothesis test:
+
+<iframe
+  src="assets/permutation_test_outcomes_dpm.html"
+  width="725"
+  height="525"
+  frameborder="0"
+></iframe>
+
+Based on the hypothesis test performed, with a **p-value** of **0.0**, we **reject** the null hypothesis. This suggests that there is a significant difference in DPM between the LPL and LCK leagues. This finding leads us to consider that the LPL may indeed play more aggressively than the LCK in League of Legends matches.
+
 ---
 
 ## Framing  a Prediction Problem
