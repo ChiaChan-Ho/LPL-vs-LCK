@@ -84,23 +84,23 @@ We permformed univariate analysis on the total kills statistics in the dataset
 
 <iframe
   src="assets/total_kills_histogram.html"
-  width="775"
-  height="575"
+  width="725"
+  height="525"
   frameborder="0"
 ></iframe>
 
-The histogram shows that the distribution of total kills per game is roughly normal, with a slight right skew. This indicates that while most games have a typical number of kills, there are some with exceptionally high kill counts. This distribution is useful for our analysis, providing a basis for comparing the aggression levels between the LPL and LCK.
+The histogram shows the distribution of total kills per game is roughly normal, with a slight right skew. This indicates that while most games have a typical number of kills, there are some with exceptionally high kill counts. This distribution is useful for our analysis, providing a basis for comparing the aggression levels between the LPL and LCK.
 
 We also plot a graph for the dirstribution of damage per minute in the data set.
 
 <iframe
   src="assets/damage_per_minute_histogram.html"
-  width="775"
-  height="575"
+  width="725"
+  height="525"
   frameborder="0"
 ></iframe>
 
-This histogram shows that...
+The histogram shows the distribution of damage per minute (DPM) is roughly normal, with a slight right skew. This indicates that most games have a typical amount of damage dealt, but there are some instances with exceptionally high DPM. This distribution helps us understand the overall damage output in games, which will be useful for comparing the aggressiveness between the LPL and LCK.
 
 ---
 
