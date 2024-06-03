@@ -118,6 +118,18 @@ According to the plot, the LPL has a higher average CKPM compared to the LCK. Sp
 
 This analysis is important for our study as it provides a foundation for comparing the gameplay characteristics of the two leagues. Understanding these differences will be beneficial for our later analysis.
 
+### Interesting Aggregates
+Below are some interesting aggregates to investigate within the dataset. 
+
+|   deaths |   total kills |   minion kills |   penta kills |
+|---------:|--------------:|---------------:|--------------:|
+|   128523 |        128257 |    8.05211e+06 |            77 |
+|   169057 |        168683 |    6.32278e+06 |           134 |
+
+We first grouped the cleaned dataset based on whether the combined kills per minute (CKPM) is above or below the mean CKPM. We then calculated the sum of various statistics for each group. By comparing the gaming statistics for matches with CKPM above the mean to those with CKPM below the mean, we gain better insights into how higher kill rates impact other game metrics.
+
+The results show that matches with CKPM above the mean have better statistics: more total kills, penta kills, and deaths, but fewer minion kills. This analysis provides a foundation for understanding the relationship between kill rates and other gameplay metrics, which will be useful for our later analysis.
+
 ---
 
 ## Assessment of Missingness
