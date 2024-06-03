@@ -89,7 +89,7 @@ We permformed univariate analysis on the total kills statistics in the dataset
   frameborder="0"
 ></iframe>
 
-This histogram shows that...
+The histogram shows that the distribution of total kills per game is roughly normal, with a slight right skew. This indicates that while most games have a typical number of kills, there are some with exceptionally high kill counts. This distribution is useful for our analysis, providing a basis for comparing the aggression levels between the LPL and LCK.
 
 We also plot a graph for the dirstribution of damage per minute in the data set.
 
