@@ -121,10 +121,10 @@ This analysis is important for our study as it provides a foundation for compari
 ### Interesting Aggregates
 Below are some interesting aggregates to investigate within the dataset. 
 
-|   deaths |   total kills |   minion kills |   penta kills |
-|---------:|--------------:|---------------:|--------------:|
-|   128523 |        128257 |    8.05211e+06 |            77 |
-|   169057 |        168683 |    6.32278e+06 |           134 |
+| ckpm > mean   |   deaths |   total kills |   minion kills |   penta kills |
+|:--------------|---------:|--------------:|---------------:|--------------:|
+| False         |   128523 |        128257 |    8.05211e+06 |            77 |
+| True          |   169057 |        168683 |    6.32278e+06 |           134 |
 
 We first grouped the cleaned dataset based on whether the combined kills per minute (CKPM) is above or below the mean CKPM. We then calculated the sum of various statistics for each group. By comparing the gaming statistics for matches with CKPM above the mean to those with CKPM below the mean, we gain better insights into how higher kill rates impact other game metrics.
 
@@ -141,6 +141,40 @@ In our data, we believe the column `url` is Not Missing At Random (NMAR). Upon e
 The missingness of the `url` column depends on the match's significance and availability, rather than on other observed data in our dataset. To make this column Missing at Random (MAR), we might obtain additional data such as `match importance`, which indicates the importance or profile level of the match, and `broadcast status`, which shows whether the match was broadcasted or uploaded online. These additional data points would help explain the missingness and potentially transform the missingness mechanism from NMAR to MAR.
 
 ### Missingness Dependency
+
+In this part, we are going to test if the missingness of the `split` column depends on the league type. The two league types we used are major regions and wildcard regions. The significance level we chose for the permutation test is 0.05, and the test statistic is the difference in the proportion of missing values between major leagues and wildcard leagues.
+
+**Null Hypothesis (H0)**: The proportion of missing values in the `split` column is the same for both major leagues and wildcard leagues. In other words, the distribution of missing values is independent of the league type.
+
+**Alternative Hypothesis (H1)**: The proportion of missing values in the `split` column is different for major leagues compared to wildcard leagues. In other words, the distribution of missing values is dependent on the league type.
+
+Below is the observed distribution of missing values in the `split` column between major and wildcard leagues, along with the permutation test outcomes.
+
+<iframe
+  src="assets/league_split_outcomes.html"
+  width="725"
+  height="525"
+  frameborder="0"
+></iframe>
+
+The observed statistic for this permutation test is 0.2736, and the p-value is 0.0. Since the p-value is less than the 0.05 significance level, we reject the null hypothesis. Thus, the missingness of the `split` column depends on the league type.
+
+The second part here, we are going to test if the missingness of the `split` column depends on the number of minion kills. The significance level we chose for the permutation test is 0.05, and the test statistic is the difference in the proportion of missing values between players with minion kills above the mean and those with minion kills below the mean.
+
+Null Hypothesis (H0): The proportion of missing values in the `split` column is the same for players with minion kills above the mean and for players with minion kills below the mean. In other words, the distribution of missing values is independent of the number of minion kills.
+
+Alternative Hypothesis (H1): The proportion of missing values in the `split` column is different for players with minion kills above the mean compared to players with minion kills below the mean. In other words, the distribution of missing values is dependent on the number of minion kills.
+
+Below is the observed distribution of missing values in the `split` column between players with minion kills above the mean and those with minion kills below the mean, along with the permutation test outcomes.
+
+<iframe
+  src="assets/minion_split_outcomes.html"
+  width="725"
+  height="525"
+  frameborder="0"
+></iframe>
+
+The observed statistic for this permutation test is 0.0114, and the p-value is 0.104. Since the p-value is greater than the 0.05 significance level, we fail to reject the null hypothesis. Thus, the missingness of the `split` column does not depend on the number of minion kills.
 
 ---
 
