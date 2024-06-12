@@ -225,9 +225,19 @@ For our prediction model, we utilize the following in-game statistics available 
 
 ## Baseline Model
 
+For the baseline model, we used a Decision Tree Classifier with a maximum depth of 2 and the entropy criterion. Our model includes the following two features: `dpm` and `ckpm`. Both of these features are quantitative, representing damage per minute and combined kills per minute, respectively. We applied the `StandardScaler` transformer to standardize these features. When features are on different scales, it can be challenging to interpret their relative importance. Standardizing puts features on a similar scale, making it easier to interpret the decision tree's feature importances and understand which features are driving the model's predictions.
+
+After fitting the model, our accuracy score on the training data is **0.6202** and on the test data is **0.5691**. This indicates that our model correctly predicts the league for approximately **62.02%** of the training instances and **56.91%** of the test instances. While this performance shows that the model has some predictive power, the accuracy scores suggest there is significant room for improvement. The current model's moderate performance is likely due to its simplicity and the limited number of features. In the next section, we will aim to enhance our model by adding more features, and tuning hyperparameters with a more complex Random Forest classifier.
+
 ---
 
 ## Final Model
+
+In our final model, we added two more features: `total kills` and `damage to champions`. These features were chosen because they provide valuable insights into the aggressiveness of a game, which is a key differentiator between the LPL and LCK as identified in our previous hypothesis test. `Total kills` reflects the overall action and engagement level in a match, while `damage to champions` indicates the intensity of combat and effectiveness in dealing damage to opponents. By incorporating these features, we aim to capture the elements of aggressiveness more comprehensively, thereby improving our model's ability to classify the league of a match.
+
+Our final model employs a Random Forest Classifier, continuing from the baseline model. The additional features we added (`total kills` and `damage to champions`) are both quantitative. We continued to use `StandardScaler` for `dpm` and `ckpm`, as done in the baseline model, to maintain consistency in feature scaling. For the newly added features, we used `QuantileTransformer` for `total kills` and `damage to champions` to ensures that extreme values do not disproportionately affect the model's performance. We performed hyperparameter tuning using grid search, testing various combinations for max depth, minimum samples split, criterion, and number of estimators. The best parameters identified were: max depth of 3, minimum samples split of 2, criterion as 'gini', and number of estimators of 150.
+
+The performance of our final model shows an improvement over the baseline model. The accuracy score on the training data is **0.6910** and on the test data is **0.5884**. This indicates a better generalization to unseen data compared to the baseline model. The improved performance suggests that adding features that capture the aggressiveness of the game, along with fine-tuning the hyperparameters, has enhanced the model's predictive power.
 
 ---
 
