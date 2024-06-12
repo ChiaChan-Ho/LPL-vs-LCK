@@ -243,5 +243,19 @@ The performance of our final model shows an improvement over the baseline model.
 
 ## Fairness Analysis
 
+In this section, we are going to assess if our model is fair among different groups. The question we are trying to answer here is: **“does my model perform worse for matches with combined kills per minute (ckpm) less than or equal to the median ckpm than it does for matches with ckpm greater than the median ckpm?"** To answer this question, we performed a permutation test and examined the result of the difference in precision between the two groups.
+
+The group X represents the matches with ckpm less than or equal to the median ckpm, and group Y represents those with ckpm greater than the median ckpm. Our **evaluation metric** is precision, and the **significance level** is 0.05.
+
+The followings are our hypotheses:
+
+**Null hypothesis**: Our model is fair. Its precision for matches with ckpm less than or equal to the median is the same as the precision for matches with ckpm greater than the median.
+
+**Alternative hypothesis**: Our model is unfair. Its precision for matches with ckpm less than or equal to the median is NOT the same as the precision for matches with ckpm greater than the median.
+
+**Test statistic**: Difference in precision between matches with ckpm less than or equal to the median and those with ckpm greater than the median.
+
+After performing the permutation test, the observed difference in precision between the two groups is **0.1964**. The resulting **p-value** is **0.5991**, which is larger than the 0.05 significance level. Consequently, we **fail to reject the null hypothesis**. This outcome implies that our model predicts matches from both groups with statistically similar precision levels. Therefore, our model appears to be fair, exhibiting no discernible bias towards one group over the other based on the specified criteria.
+
 ---
 
