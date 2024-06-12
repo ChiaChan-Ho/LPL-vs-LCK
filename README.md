@@ -93,8 +93,6 @@ The histogram shows the distribution of total kills per game is roughly normal, 
 
 We also plot a graph for the dirstribution of damage per minute in the data set.
 
-
-
 <iframe
   src="assets/damage_per_minute_histogram.html"
   width="725"
@@ -114,7 +112,7 @@ We performed bivariate analysis on the combined kills per minute (CKPM) statisti
   frameborder="0"
 ></iframe>
 
-According to the plot, the LPL has a higher average CKPM compared to the LCK. Specifically, the LPL averages approximately 0.85 CKPM, while the LCK averages around 0.65 CKPM. This indicates that matches in the LPL tend to have more kills per minute than those in the LCK.
+According to the plot, the LPL has a higher average CKPM compared to the LCK. Specifically, the LPL averages approximately 0.83 CKPM, while the LCK averages around 0.70 CKPM. This indicates that matches in the LPL tend to have more kills per minute than those in the LCK.
 
 This analysis is important for our study as it provides a foundation for comparing the gameplay characteristics of the two leagues. Understanding these differences will be beneficial for our later analysis.
 
