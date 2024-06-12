@@ -205,6 +205,22 @@ Based on the hypothesis test performed, with a **p-value** of **0.0**, we **reje
 
 ## Framing  a Prediction Problem
 
+From the last section, we found out that the game played in LPL may indeed be more aggressive than the LCK, based on our hypothesis test. Given this finding, we now seek to determine if it is possible to predict whether a match is played in the LPL or the LCK solely by analyzing in-game statistics. Specifically, statistic that can measure the agressiveness of a game such as DPM we used in the previous part and other relevant features. To address this question, we can employ machine learning techniques such as **classification** algorithms. Thus, at here, the model that we built are based on the following **prediction problem**: Are we able to predict if a match is played in the LPL or the LCK based on in-game statistics?
+
+Since we are predicting based on game statistics, we decided to keep only the columns relevant to our prediction: `dpm`, `ckpm`, `total kills`, and `damage to champions`. The **response variable**, `league`, will be used here because it directly addresses our question of distinguishing between LPL and LCK matches based on their in-game statistics. Therefore, this is a **binary classification model** because the **response variable**, `league`, has two possible values: 'LPL' and 'LCK'. The dataframe used for the model looks like this:
+
+| gameid             | league   |   ckpm |   total kills |   damage to champions |     dpm |
+|:-------------------|:---------|-------:|--------------:|----------------------:|--------:|
+| 10005-10005_game_1 | LPL      | 0.5591 |            16 |                 86717 | 3030.3  |
+| 10005-10005_game_2 | LPL      | 0.9788 |            30 |                151599 | 4946.13 |
+| 10005-10005_game_3 | LPL      | 0.6202 |            19 |                102543 | 3347.43 |
+| 10005-10005_game_4 | LPL      | 1.1772 |            32 |                112495 | 4138.38 |
+| 10006-10006_game_1 | LPL      | 0.8484 |            32 |                185748 | 4924.83 |
+
+To prevent overfitting, the data will be split into two parts: 75% training data and 25% test data. In terms of model evaluation, we will use the metric **accuracy**. The reason we are using accuracy is that it provides a straightforward measure of the proportion of correctly classified instances, giving us a general sense of the model's performance.
+
+For our prediction model, we utilize the following in-game statistics available at the time of prediction: `dpm`, `ckpm`, `total kills`, and `damage to champions`. These metrics are recorded throughout the match and provide the necessary data for our analysis. By training our model using these features, we ensure that we are only incorporating information that is known before determining the league, thereby avoiding any potential data leakage and preserving the model's accuracy.
+
 ---
 
 ## Baseline Model
