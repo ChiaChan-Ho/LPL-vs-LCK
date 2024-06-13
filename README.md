@@ -254,6 +254,3 @@ The followings are our hypotheses:
 **Test statistic**: Difference in precision between matches with ckpm less than or equal to the median and those with ckpm greater than the median.
 
 After performing the permutation test, the observed difference in precision between the two groups is **0.1964**. The resulting **p-value** is **0.5991**, which is larger than the 0.05 significance level. Consequently, we **fail to reject** the null hypothesis. This outcome implies that our model predicts matches from both groups with statistically similar precision levels. Therefore, our model appears to be fair, exhibiting no discernible bias towards one group over the other based on the specified criteria.
-
----
-
